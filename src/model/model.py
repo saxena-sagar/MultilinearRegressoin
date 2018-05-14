@@ -5,6 +5,7 @@ from preprocessing import Preprocessing
 from sklearn.linear_model import LinearRegression
 import numpy as np
 from sklearn.metrics import mean_squared_error
+import pandas as pd
 
 class Model(object):
     """docstModel."""
@@ -33,7 +34,12 @@ class Model(object):
         X_pred = test_dataset[:,0:3]
         Y_pred = test_dataset[:,2]
         y_pred = reg.predict(X_pred)
-        print('RMSE Score: ', mean_squared_error(Y_pred, y_pred))
+        #print('RMSE Score: ', mean_squared_error(Y_pred, y_pred))
+        #predicting y_test based on the x_test dataset provided
+        X_test_array = np.array(pd.read_csv("/home/sagar/Desktop/seldon/datasets/X_test.csv"))
+        X_test = X_test_array[:,1:4]
+        y_test = reg.predict(X_test)
+        print("y_test: ",y_test)
 
 def main():
 

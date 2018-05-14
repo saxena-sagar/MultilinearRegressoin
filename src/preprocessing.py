@@ -38,8 +38,8 @@ class Preprocessing(object):
         #replacing the missing value from the dataset treated by numpy as NaN.
         # imp = Imputer(missing_values='NaN', strategy='mean', axis=0)
         # imp.fit([[1, 2], [np.nan, 3], [7, 6]])
-        #return dataset_normalized
-        return training_dataset
+        return dataset_normalized
+        #return training_dataset
 
     def pca_analysis_dataset(self,standardized_normalised_dataset):
         #calculating the mean vector where each value in this vector represents the sample mean of a feature column in the dataset
